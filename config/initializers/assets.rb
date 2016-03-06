@@ -5,6 +5,8 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 Rails.application.config.assets.precompile += %w( agency.js )
 Rails.application.config.assets.precompile += %w( classie.js )
+Rails.application.config.assets.precompile += %w( contact_me.js )
+Rails.application.config.assets.precompile += %w( jqBootstrapValidation.js )
 Rails.application.config.assets.precompile += %w( cbpAnimatedHeader.js )
 Rails.application.config.assets.precompile += %w( agency.css )
 
