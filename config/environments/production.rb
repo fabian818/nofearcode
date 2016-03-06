@@ -34,6 +34,19 @@ Rails.application.configure do
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
+  
+
+  ActionMailer::Base.delivery_method = :smtp  
+  ActionMailer::Base.smtp_settings = {            
+    :address              => "smtp.zoho.com", 
+    :port                 => 465,                 
+    :user_name            => 'info@nofearcode.com',
+    :password             => '12345678',         
+    :authentication       => :login,
+    :ssl                  => true,
+    :tls                  => true,
+    :enable_starttls_auto => true    
+  }
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
