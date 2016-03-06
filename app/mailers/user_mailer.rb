@@ -6,9 +6,8 @@ class UserMailer < ApplicationMailer
 		mail(to: @proposal.email, subject: 'Sample Email')
 	end
 
-	def info_email(proposal)
+	def info_email(proposal, email)
 		@proposal = proposal
-		mail(to: 'f.pena.jacobo@gmail.com', subject: 'Información de cliente')
-		mail(to: 'luiserick6294@gmail.com', subject: 'Información de cliente')
+		mail(to: email, subject: 'Información de cliente')
 	end
 end
