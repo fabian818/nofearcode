@@ -8,6 +8,7 @@ Rails.application.config.assets.precompile += %w( classie.js )
 Rails.application.config.assets.precompile += %w( contact_me.js )
 Rails.application.config.assets.precompile += %w( jqBootstrapValidation.js )
 Rails.application.config.assets.precompile += %w( cbpAnimatedHeader.js )
+Rails.application.config.assets.precompile += %w( jquery.easing.js )
 Rails.application.config.assets.precompile += %w( agency.css )
 
 # Add additional assets to the asset load path
