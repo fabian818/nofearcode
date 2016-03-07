@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/test_email'
   post 'mail' => 'welcome#mail', as: :mail
 
   # The priority is based upon order of creation: first created -> highest priority.

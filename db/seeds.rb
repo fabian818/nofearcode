@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+proposal = Proposal.first
+puts proposal.email
+email = UserMailer.welcome_email(proposal).deliver_now

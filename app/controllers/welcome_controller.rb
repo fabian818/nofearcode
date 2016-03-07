@@ -10,4 +10,9 @@ class WelcomeController < ApplicationController
 		end		
 		render json: {status: 200}
 	end
+
+	def test_email
+		# attachments.inline['header-bg.jpg'] = File.read('app/assets/images/header-bg.jpg')
+		render layout: "mailer"
+	end
 end
