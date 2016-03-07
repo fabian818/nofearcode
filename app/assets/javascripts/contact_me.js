@@ -18,6 +18,7 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+            $('#btn-submit').html("Enviando información...");
             $.ajax({
                 url: "/mail",
                 type: "POST",
@@ -30,6 +31,7 @@ $(function() {
                 cache: false,
                 success: function() {
                     // Success message
+                    $('#btn-submit').html("Enviar Propuesta");
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
@@ -42,7 +44,8 @@ $(function() {
                     $('#contactForm').trigger("reset");
                 },
                 error: function() {
-                    // Fail message
+                    // Fail message                    
+                    $('#btn-submit').html("Enviar Propuesta");
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
