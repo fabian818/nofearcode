@@ -36,7 +36,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Su propuesta ha sido enviada correctamente a nuestros correos, le hemos enviado un correo de contacto desde info@nofearcode.com a " + email + " </strong>");
+                        .append("<strong>Su propuesta ha sido enviada correctamente a nuestros correos, en breve le enviaremos un correo de contacto desde info@nofearcode.com a " + email + " </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
