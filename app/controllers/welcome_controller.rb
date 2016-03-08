@@ -3,11 +3,19 @@ class WelcomeController < ApplicationController
 	end
 
 	def mail
-		proposal = Proposal.create(name: params[:name], body: params[:message], phone: params[:phone], email: params[:email])
-		UserMailer.welcome_email(proposal).deliver_now
-		['f.pena.jacobo@gmail.com', 'luiserick6294@gmail.com'].each do |email|
-			UserMailer.info_email(proposal, email).deliver_now
-		end		
+		user = User.create_or_find(params)
+		puts user.inspect
+		proposal = user.proposals.create(body: params[:message], phone: params[:phone])
+		puts proposal.inspect
+		$customerio.identify(
+			:id => user.id,
+			:email => user.email,
+			:created_at => user.created_at.to_i,
+			:first_name => user.name,
+			:proposals => user.proposals.count
+			)
+
+		$customerio.track(user.id, "welcome", {proposals: user.proposals.count})
 		render json: {status: 200}
 	end
 

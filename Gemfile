@@ -13,6 +13,7 @@ end
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
 gem 'puma'
+gem 'customerio'
 gem 'roadie-rails', '~> 1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
