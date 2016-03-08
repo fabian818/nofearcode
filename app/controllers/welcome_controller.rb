@@ -15,7 +15,11 @@ class WelcomeController < ApplicationController
 			:proposals => user.proposals.count
 			)
 
-		$customerio.track(user.id, "welcome", {proposals: user.proposals.count})
+		$customerio.track(user.id, "welcome", {
+			proposals: user.proposals.count,
+			body: proposal.body,
+			phone: proposal.phone
+			})
 		render json: {status: 200}
 	end
 
